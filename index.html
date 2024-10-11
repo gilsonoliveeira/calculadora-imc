@@ -5,37 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora IMC</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <main>
-        <h1>Calculadora IMC</h1>
+        <h1 id="h1">Calculadora IMC</h1>
         
         <section id="peso">
             <p>
-                Digite o seu Peso:
+                Selecione o seu Peso:
             </p>
-            <input type="range" name="ipes" id="ipes">
+            <input type="range" name="ipes" id="ipes" min="30" max="200" step="1" oninput="updatePeso(this.value)">
             <br>
-            <input type="number" name="pnum" id="pnum"> Kg
+            <input type="number" name="pnum" id="pnum" value="30" readonly> Kg
             
 
         </section>
 
         <section id="altura">
             <p>
-                Digite a sua Altura:
+                Selecione a sua Altura:
             </p>
-            <input type="range" name="ialt" id="ialt">
+            <input type="range" name="ialt" id="ialt" min="100" max="250" oninput="updateAltura(this.value)">
             <br>
-            <input type="number" name="anum" id="anum"> Mts.
-            
-
+            <input type="number" name="anum" id="anum" value="1.00" readonly> Mts.
         </section>
         
         <section id="calcular">
             <input type="submit" value="Calcular IMC" onclick="calcular()">
         </section>
-    </main>
 
+        <div id="res" style="display: none;">
+            <h2>Resultado:</h2>
+            <p id="imcResult"></p>
+            <button onclick="resetar()">Calcular Novamente</button>
+
+        </div>
+    </main>
+ 
 </body>
 </html>

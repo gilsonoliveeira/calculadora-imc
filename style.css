@@ -31,6 +31,8 @@ h1 {
     color: white;
     text-align: center;
     padding: 5px;
+    font-size: 1.8em;
+    
     
 }
 
@@ -76,7 +78,13 @@ input[type="range"] {
 }
 
 input[type=range]::-webkit-slider-thumb {
-   
+   -webkit-appearance: none;
+   appearance: none;
+   width: 15px;
+   height: 15px;
+   background-color: white;
+   cursor: pointer;
+   border-radius: 50%;
 }
 
 input[type="number"] {
@@ -87,3 +95,9 @@ input[type="number"] {
     text-align: center;
 }
 
+#res {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+}
