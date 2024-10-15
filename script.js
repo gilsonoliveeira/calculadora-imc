@@ -20,27 +20,41 @@ function calcular() {
     document.getElementById('altura').style.display = "none"
     document.getElementById('h1').style.display = "none"
     document.getElementById('calcular').style.display = "none"
-    document.getElementById('res').style.display = "block"
+    res.style.display = "block"
 
-    res.innerHTML = ""
+    let resultado = "";
     
 
     if (imc < 18.5) {
-        res.innerHTML = "Seu IMC é de " + imc.toFixed(2) + ". Você está abaixo do peso."
+        resultado = "Seu IMC é de <strong>" + imc.toFixed(2) + "</strong>. Você está <strong>abaixo do peso</strong>."
+
     }
     else if (imc >= 18.5 && imc <= 24.9) {
-        res.innerHTML = "Seu IMC é de " + imc.toFixed(2) + ". Você está no peso ideal."
+        resultado = "Seu IMC é de <strong>" + imc.toFixed(2) + "</strong>. Você está no <strong>peso ideal</strong>."
     }
     else if (imc >= 25.0 && imc <= 29.9) {
-        res.innerHTML = "Seu IMC é de " + imc.toFixed(2) + ". Você está com sobrepeso."
+        resultado = "Seu IMC é de <strong>" + imc.toFixed(2) + "</strong>. Você está com <strong>sobrepeso</strong>."
     }
     else if (imc >= 30.0 && imc <= 34.9) {
-        res.innerHTML = "Seu IMC é de " + imc.toFixed(2) + ". Você está com obesidade grau I."
+        resultado = "Seu IMC é de <strong> " + imc.toFixed(2) + "</strong>. Você está com <strong>obesidade grau I</strong>."
     }
     else if (imc >= 35.0 && imc <= 39.9) {
-        res.innerHTML = "Seu IMC é de " + imc.toFixed(2) + ". Você está com obesidade grau II (severa)."
+        resultado = "Seu IMC é de <strong>" + imc.toFixed(2) + "</strong>. Você está com <strong>obesidade grau II (severa)</strong>."
     }
     else {
-        res.innerHTML = "Seu IMC é de " + imc.toFixed(2) + ". Você está com obesidade mórbida (morbida)."
+        resultado = "Seu IMC é de <strong>" + imc.toFixed(2) + "</strong>. Você está com <strong>obesidade mórbida (morbida)</strong>."
     }
+
+    document.getElementById('resultado').innerHTML = resultado;
+
+        
+}
+
+function resetar() {
+    res.style.display = "none"
+    document.getElementById('peso').style.display = "block"
+    document.getElementById('altura').style.display = "block"
+    document.getElementById('h1').style.display = "block"
+    document.getElementById('calcular').style.display = "block"
+
 }
